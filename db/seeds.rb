@@ -8,3 +8,9 @@
 
 # product = Product.new(name: "Gucci Slides", price: 10, image_url: "https://cache.mrporter.com/variants/images/666467151987779/fr/w2000_q80.jpg", description: "Not counterfeit.")
 # product.save
+
+# new_product = Product.new(name: "Hawaiian Shirt", price: 35, image_url: "https://35f0jq1fcotly82b3o727xi0-wpengine.netdna-ssl.com/wp-content/uploads/rocky-island-palms-hawaiian-shirt-8-510x765.jpg", description: "Definitely your dad's favorite.")
+# new_product.save
+
+
+
