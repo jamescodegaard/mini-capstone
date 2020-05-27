@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# product = Product.new(name: "Gucci Slides", price: 10, image_url: "https://cache.mrporter.com/variants/images/666467151987779/fr/w2000_q80.jpg", description: "Not counterfeit.")
+# product.save
