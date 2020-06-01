@@ -1,5 +1,5 @@
 require "http"
 
-response = HTTP.get("http://localhost:3000/api/products_url")
+response = HTTP.get("http://localhost:3000/api/products")
 
 p response.parse
