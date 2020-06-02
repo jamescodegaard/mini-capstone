@@ -14,11 +14,27 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       name: params[:name],
       price: params[:price],
-      description: params[:description], 
-      image_url: params[:image_url]
+      image_url: params[:image_url],
+      description: params[:description]
     )
     @product.save
     render 'show.json.jb'
+  end
+
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.name = params[:name] || @product.name
+    @product.price = params[:price] || @product.price
+    @product.description = params[:description] || @product.description
+    @product.image_url = params[:image_url] || @product.image_url
+    @product.save
+    render 'show.json.jb'
+  end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+    render json: {message: "Okay but that's what I was going to buy...."}
   end
 
 end
