@@ -10,6 +10,5 @@
   is_discounted?: product.is_discounted?,
   in_stock: product.in_stock,
   supplier: product.supplier.name,
-  images: product.images,
-  
+  images: product.images
 }
