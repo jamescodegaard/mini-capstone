@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   #   Supplier.find_by(id: supplier_id)
   # end
   has_many :images
+  has_many :orders
+
   
   def is_discounted?
     price < 10
