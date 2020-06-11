@@ -1,5 +1,7 @@
 class Api::ProductsController < ApplicationController
 
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     if current_user
       @products = Product.all
@@ -34,6 +36,7 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       name: params[:name],
       price: params[:price],
+      supplier_id: params[:supplier_id],
       description: params[:description]
     )
     if @product.save #happy
