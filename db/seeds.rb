@@ -19,3 +19,18 @@
 #   {url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgnE2rj870Co3d7nO1dM6Wp6ZZ6Iz-iTeiL4mByD9cze3FgxX33u5ykIBaW8Ef2pekWnubu_Nf&usqp=CAc", product_id: 3},
 #   {url: "https://www.dhresource.com/0x0/f2/albu/g9/M00/E6/99/rBVaWF4S-ACAD0gpAABALJ2Cb3Y708.jpg", product_id: 4}
 # ])
+
+# Category.create!([
+#     {name: "Clothing"},
+#     {name: "Accessory"},
+#     {name: "Trinket"}
+#   ])
+
+# ProductCategory.create!([
+#   {product_id: 1, category_id: 1},
+#   {product_id: 3, category_id: 2},
+#   {product_id: 5, category_id: 2},
+#   {product_id: 7, category_id: 3},
+#   {product_id: 4, category_id: 1},
+#   {product_id: 2, category_id: 3}
+# ])
