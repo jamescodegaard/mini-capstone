@@ -1,5 +1,12 @@
 class Api::CartedProductsController < ApplicationController
   
+  before_action :authenticate_user
+
+  def index
+    @carted_products = current_user.carted_products.where(status: "carted")
+    render "index.json.jb"
+  end
+  
   def create
     @carted_product = CartedProduct.new(
       user_id: current_user.id,
@@ -8,13 +15,16 @@ class Api::CartedProductsController < ApplicationController
       status: "carted"
     )
     if @carted_product.save
-      render 'show.json.jb'
+      render "show.json.jb"
     else
-      render json: {message: "lol, nope", errors: @order.errors.full_messages}, status: :unprocessable_entity
-    end
+      render json: { errors: @carted_product.errors.full_messages }, status: :unprocessable_entity
+    end  
   end
 
-  def index
+  def destroy
+    @carted_product = current_user.carted_products.find_by(id: params[:id], status: "carted")
+    @carted_product.update(status: "removed")
+    render json: {status: "Carted product removed"}
   end
 
 end
